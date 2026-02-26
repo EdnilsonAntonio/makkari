@@ -31,10 +31,7 @@ export function Sidebar() {
                 {/* Logo */}
                 <div className="h-16 flex items-center px-6 border-b border-gray-100">
                     <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded-lg bg-[#4e0504] flex items-center justify-center text-white">
-                            <Zap className="h-4 w-4 fill-white" />
-                        </div>
-                        <h1 className="text-[#181111] text-xl font-bold tracking-tight">Makkari</h1>
+                        <img className="w-30" src="/assets/branding/Makkari Colored Symbol Transparent.png" alt="Makkari" />
                     </div>
                 </div>
 
