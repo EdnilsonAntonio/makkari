@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Makkari Team Directory</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4e0404",
+                        "primary-hover": "#6e0606",
+                        "secondary": "#8a6060",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "accent-coral": "#f5f0f0", // Very light variant for backgrounds
+                        "success": "#16a34a",
+                        "warning": "#eab308",
+                        "error": "#dc2626",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#181111] dark:text-gray-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col w-64 bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 h-full flex-shrink-0">
+<!-- Brand -->
+<div class="flex items-center gap-3 p-6">
+<div class="bg-primary/10 rounded-lg p-2">
+<span class="material-symbols-outlined text-primary text-3xl">task_alt</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary dark:text-white">Makkari</h1>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 px-4 space-y-2 py-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-accent-coral dark:hover:bg-primary/20 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:group-hover:text-white transition-colors">dashboard</span>
+<span class="font-medium group-hover:text-primary dark:group-hover:text-white">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-accent-coral dark:hover:bg-primary/20 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:group-hover:text-white transition-colors">check_circle</span>
+<span class="font-medium group-hover:text-primary dark:group-hover:text-white">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-accent-coral dark:hover:bg-primary/20 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:group-hover:text-white transition-colors">calendar_month</span>
+<span class="font-medium group-hover:text-primary dark:group-hover:text-white">Calendar</span>
+</a>
+<!-- Active Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/30 text-primary dark:text-white transition-colors" href="#">
+<span class="material-symbols-outlined fill-current">group</span>
+<span class="font-bold">Team</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-accent-coral dark:hover:bg-primary/20 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:group-hover:text-white transition-colors">bar_chart</span>
+<span class="font-medium group-hover:text-primary dark:group-hover:text-white">Reports</span>
+</a>
+</nav>
+<!-- User Profile Snippet (Bottom Sidebar) -->
+<div class="p-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border border-gray-200" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQtClSdjJrB5ga0c75GYX9fyPGLivAUVV6ro3zQHAbXwuK8mYxZ-egFZyCJfo4BGErkZduAqCxtBz5KwnYzhCM2oMPAqSrffPfoXGLtgji2u7eu7pZ3PQPovhkGna1b3Y836Im6T5iTSaWD8evI03N7coIWB_XfzlqJfd_tIB-WFXaD0QJcSeNtrOooaRXmprhURrCMtbdIUOxjgyy44rlpNfAUXa6q5RkAA3oCkL6k-qppUGsAfzH_2-rDTVD9rXvbTpAXcXkGRNm');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-900 dark:text-white">Alex Morgan</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Admin Workspace</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 sticky top-0 z-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">task_alt</span>
+<span class="font-bold text-lg text-primary dark:text-white">Makkari</span>
+</div>
+<button class="text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Page Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-[#181111] dark:text-white">Team Directory</h1>
+<p class="text-secondary dark:text-gray-400 max-w-2xl text-base md:text-lg">Manage your team members, view their availability, and track recent activity.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-bold shadow-sm transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Invite Member</span>
+</button>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-4 flex flex-col md:flex-row gap-4 items-center justify-between sticky top-0 md:static z-10">
+<!-- Search Input -->
+<div class="relative w-full md:max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-gray-400 text-sm" placeholder="Search by name, role, or email..." type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-background-light dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:border-primary transition-colors whitespace-nowrap">
+<span>Department</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-background-light dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium hover:border-primary transition-colors whitespace-nowrap">
+<span>Status</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<div class="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-1"></div>
+<button class="p-2 text-gray-500 hover:text-primary transition-colors" title="Grid View">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 text-gray-400 hover:text-primary transition-colors" title="List View">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<!-- Team Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1: Available -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Sarah Jenkins" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCImvd05KKKU5w_WOq2g5uiT19fd5H5HuZ7LB0yw6v4u5X4aMORmasOXVMJFQZ2pA3YtE7axlEkjS2KMB72S9nl3ZN69y5L8gGGtn6OmQnv3vhFE4m-05xeYhJOHm_s-JW2UQCrsBiVc3rVr69eVznvcRwcIO66PhVB_QyXwXUhYScSuHEC0gq5VJCKBxfTw0BtHvvSyR2DwUOdNQJrwxieH97rPjpdCR_s1PFAwE7a9xAkTs4XIJqoXyXI7sUYneT6A0YhmwQ5zMtC');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-success rounded-full border-2 border-white dark:border-surface-dark" title="Available"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Sarah Jenkins</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Product Designer</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Available
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Updated Design System
+                                </p>
+</div>
+</div>
+<!-- Card 2: Busy -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Michael Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlesGF3JJ0KrrPlGHPkzDhqLnIi0urDITmDBQZGiPqDT-j2S8ULPkTeYdj9vub8WEUxdshLjmHzLgY7Xs9eDpS9GT9an4d8-YNnXloO_FohUv7U8zh1XoP9yKnuUm1QGKsh6K4XHhLv1M4kvrYU7DBH7NxqEpD2FWv9OQJYq_qV56qhYWfxKOIsoHrdcKpZnrS27eSAF9sdtobJtLZ8mLoEFaj31r03vfjD-SvRA2OjlS8AnCdnDF0KJb1IJ3hSQY-MfZrlSB3m8Wv');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-error rounded-full border-2 border-white dark:border-surface-dark" title="Busy"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Michael Chen</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Frontend Engineer</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                    In Meeting
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Client API Sync
+                                </p>
+</div>
+</div>
+<!-- Card 3: Away -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Jessica Lee" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMK-yTRw-w6ckQZXQZFFtsU03xZy_JXjO7Mfh2xBlBZUG16bQh1N920Bgg14cESnDPJr5bNtbzelovyT4leLWupTvxn8jAhMDOMdC_cRZWnHsRFu9YkOfv7jwqosZHLu3ybJLMwku4Ia8_czM2ge2DZynr0_TLDKArFZ49v02ytz0tYx2MA14g9MMVkepCccJGq4FEDuKV8LnXFN57ekFSuNDEqb05ohriUq3xUp4wd9GPYrJRpX5OEYwkSc1d1Bpkvk37Pc1ShMZI');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-warning rounded-full border-2 border-white dark:border-surface-dark" title="Away"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Jessica Lee</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Marketing Lead</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+                                    Away
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Campaign Review
+                                </p>
+</div>
+</div>
+<!-- Card 4: Available -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of David Kim" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuN4nUEDqASAp68wiXGmyBN_INfQBbWoPG5MjpyoBrvXSTls0G3VYs7it0azU6e5iqKltjm_VDQpBUSpRThgm7T7IHz3G1WkYZ6X_yDQpNMlldtXwyoxNLEoljttzCbmRXPYSphnOQZBomhKpsB1GTJ4qXMDPQUMeVga-KPSE0y-Gs24yxqhaf4Ngc8s7BFi5A0REX3w9_nVAjakZ6DSnBEHffnuzM8QmXnikNXhvNf1Fnm3Cr_ZUqtjPZ_QBHLlZETqEq9HAGZyL0');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-success rounded-full border-2 border-white dark:border-surface-dark" title="Available"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">David Kim</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Backend Developer</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Available
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: DB Migration
+                                </p>
+</div>
+</div>
+<!-- Card 5: Available -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Amanda Ross" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK3AyXdBQT2_gXxY85TwGhqpxNsKYKnS_yAqHNV1spZvy_Dt66GKM8kA2mGg-1LbpXH5WsG_O9aB1IohYqO34e3da35H9DUlRqN3fDAnlvUFcZciHaU6cCH8q4oxrN9ism1HNlh7Zv9kAhSdFN_3nEmI7ABGvABo1wuL-GJbCEQMEJ4Glgeh5iX5WuX4IkHZJGR97VK_b3uEztgch8XgRbmZ5UYikWKOz4mu0hXWdnBfaiL7w4PEAi4xxTe3D7l8FDPtpX0uxtPijw');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-success rounded-full border-2 border-white dark:border-surface-dark" title="Available"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Amanda Ross</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">HR Manager</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Available
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Team Onboarding
+                                </p>
+</div>
+</div>
+<!-- Card 6: Busy -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of James Wilson" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSt83YBtCV49J-KN9gDmiLTyKbXx-bK2TbakfO7LOZ8rYjU_t61UCbeFGcGW8cdkZQnnFbVrynFuHpS5hBFmcJLRmP3SejPjvl6TXOU4TuEFSIJ8JEmkfubBzJtSd2sDQ93wg8mX3qgpG-2gI_M169803nFZO-gaPVnH0NNIBzDHXI6pULpFMxBmd1adXeW6VxN2cRFTDq-iNb7nqsOmrhWAfxdkD3fsq-amCu4b-3C2asHP9Yrb32VCYm9tf4whDaBN2IYqwQ-GpC');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-error rounded-full border-2 border-white dark:border-surface-dark" title="Busy"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">James Wilson</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Sales Director</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                    In Call
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Q3 Review
+                                </p>
+</div>
+</div>
+<!-- Card 7: Available -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Emily White" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASGukwMwGsn4GcqhSNhJ1yvxhe-NR3Mgz5nqdbLVLvwR2QZdiP5lHH71bwGX4Rtx33OYfu6q0cmEDluMCJMr9OVc3BDgLHo02myknmezETK3r5PfsQj9AdI653U_eYRxCZGFZ_75HyzraD2masxSkbMgbZSOLyjNuEJhxjnlWJm0aV2oi19wczxefQNmN6kTaVidI_L9ofSzEhU0iLWoKibzV4Sp7UILG0LGp6jrnBYARiJQ_zI7_YZ75dDoiAjM6Ol8f-eCdhr8k-');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-success rounded-full border-2 border-white dark:border-surface-dark" title="Available"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Emily White</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">QA Specialist</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Available
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Bug Triage
+                                </p>
+</div>
+</div>
+<!-- Card 8: Away -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-5 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 relative">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-gray-400 hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center pt-2">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center mb-3 ring-4 ring-background-light dark:ring-background-dark group-hover:scale-105 transition-transform duration-300" data-alt="Portrait of Robert Brown" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFFOUOrLfRXxboJ08w7SurHYqWjEr2__cttaWwRNThuBFYPk4eVgPtAlGOkBK_DsyT5piVGht9-1qjzmzibvzhxkOWt0--PY9i_Qk_RdYGTWWNxfuO0qP6ntRy_TzzkEBhSnvpCM4FVQL_lc8vw1N2xz9mzSdxR7gehIaWVv2tCpDtlh1nM96LEntrh3-WUI9x80Nas6xAF0hi3mLdTISIk0sxq9_7qdMMO_hVRUlbV8q_qCOSruLxFn-CfFRqdf0dTLDSG8BUqNwl');"></div>
+<div class="absolute bottom-3 right-0 w-5 h-5 bg-warning rounded-full border-2 border-white dark:border-surface-dark" title="Away"></div>
+</div>
+<h3 class="text-lg font-bold text-[#181111] dark:text-white leading-tight">Robert Brown</h3>
+<p class="text-secondary dark:text-gray-400 text-sm font-medium">Product Manager</p>
+</div>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+                                    Out of Office
+                                </span>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1.5 justify-center">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    Recent: Roadmap Planning
+                                </p>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex justify-center pb-8 pt-4">
+<button class="text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white font-medium text-sm flex items-center gap-2 px-6 py-2 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors border border-transparent hover:border-gray-200 dark:hover:border-gray-800">
+                            Load More Members
+                            <span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
