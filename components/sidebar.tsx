@@ -14,6 +14,7 @@ import {
     ChevronDown,
     Settings,
 } from "lucide-react";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 const navItems = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -30,6 +31,7 @@ export function Sidebar() {
     const { theme } = useTheme();
 
     const isDarkPage = theme === "dark" && pathname === "/reports";
+    const { user } = useKindeBrowserClient();
 
     return (
         <div className={`${isDarkPage ? "dark" : ""} w-64 flex-shrink-0 hidden md:flex flex-col z-20`}>
@@ -37,10 +39,10 @@ export function Sidebar() {
                 <div className="flex flex-col h-full">
                     {/* Logo */}
                     <div className="h-16 flex items-center px-6 border-b border-gray-100 dark:border-[#392828]">
-                        <div className="flex items-center gap-3">
+                        <Link href="/" className="flex items-center gap-3">
                             <img className="w-30 block dark:hidden" src="/assets/branding/Makkari Colored Symbol Transparent.png" alt="Makkari" />
                             <img className="w-30 hidden dark:block" src="/assets/branding/Makkari Dark Logo Transparent.png" alt="Makkari" />
-                        </div>
+                        </Link>
                     </div>
 
                     {/* Navigation */}
@@ -68,14 +70,22 @@ export function Sidebar() {
                     {/* User Profile */}
                     <div className="p-4 border-t border-gray-100 dark:border-[#392828]">
                         <button className="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-[#251a1a] cursor-pointer transition-colors">
-                            <div
-                                className="h-9 w-9 rounded-full bg-cover bg-center flex-shrink-0 bg-gray-300 dark:border dark:border-[#392828]"
-                                style={{
-                                    backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkizVjg4PA9cPv7GuH8-obBPPYCwSmHqRTFKg_wz52u2X_0Jyf-zH62tnaInrN7rRvuOFDkfoi8Xh8i3EJfAopPcfqfQ-KTUa_-WhU2gl1p9kgZRnKQHgP4oxN43bpMiv1uHTM-F8ftR-QraDue8nyZe_wRTmgYWUcz0ISvVzKZs655Jh4-8P6XjJQxSS18ORX4ptbpxMi2ghOhCLR6SD8_QnRGfjk6ePNa4tNmPN2338OmcssjH2zW5exaZTTFC_uNS-JCbI-lage")`,
-                                }}
-                            />
+                            {user?.picture ? (
+                                <img
+                                    className="h-9 w-9 rounded-full object-cover flex-shrink-0 bg-gray-300 dark:border dark:border-[#392828]"
+                                    src={user.picture}
+                                    alt={`${user?.given_name || 'User'}'s profile`}
+                                    referrerPolicy="no-referrer"
+                                />
+                            ) : (
+                                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-300 dark:bg-[#251a1a] dark:border dark:border-[#392828] text-sm font-semibold text-gray-700 dark:text-gray-300 flex-shrink-0">
+                                    {user?.given_name?.charAt(0)}
+                                    {user?.family_name?.charAt(0)}
+                                </span>
+                            )}
+
                             <div className="flex flex-col flex-1 min-w-0 text-left">
-                                <p className="text-sm font-bold text-[#181111] dark:text-white truncate">Elara V.</p>
+                                <p className="text-sm font-bold text-[#181111] dark:text-white truncate">{user?.given_name} {user?.family_name?.charAt(0)}.</p>
                                 <p className="text-xs text-[#8a6160] dark:text-[#ba9c9c] truncate">Pro Workspace</p>
                             </div>
                             <ChevronDown className="h-4 w-4 text-gray-400 dark:text-[#ba9c9c] flex-shrink-0" />
